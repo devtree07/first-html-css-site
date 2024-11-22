@@ -1,0 +1,121 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 28px;
+  color: red;
+  text-align: center;
+}
+
+nav {
+  margin-bottom: 2rem;
+}
+
+nav > ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+hr {
+  border-top: 1px solid lightgrey;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 24px;
+  color: green;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figcaption {
+  text-align: right;
+  color: grey;
+}
+
+a {
+  text-decoration: none;
+  color: orange;
+  border-bottom: 1px solid orange;
+  padding-bottom: 1px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+main > article {
+  margin-bottom: 2rem;
+}
+
+.footer {
+  text-align: right;
+  padding-top: 1rem;
+  border-top: 1px solid lightgray;
+}
+
+@media (min-width: 576px) {
+  nav {
+    /*dzielimy nagłówek na 3 kolumny*/
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas: ". header list";
+    /* definiujemy nazwy poszczególnych kolumn (. to 1. kolumna - pusta, header to h1, list- 3. kolumna) */
+  }
+
+  nav > ul {
+    grid-area: list;
+    /* nadaje nazwe, ktora wykorzystam w budowie szablonu */
+    margin: auto 0;
+  }
+
+  h1 {
+    grid-area: header;
+    /* nadaję nazwę, ktora wykorzystam w budowie szablonu */
+  }
+
+  body {
+    margin: 2rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  nav > ul {
+    text-align: right;
+    flex-direction: column;
+    /* zmiana orientacji na kolumne */
+  }
+}
+
+@media (min-width: 768px) {
+  .class {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    column-gap: 1rem;
+    /* dodajemy odstep przy linii siatki */
+  }
+
+  aside {
+    border-left: 1px solid lightgray;
+    padding-left: 1rem;
+    text-align: center;
+  }
+
+  aside > article > ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}
